@@ -82,7 +82,7 @@ def available_providers() -> list[ProviderSpec]:
             api=Api.inference,
             adapter_type="vllm",
             provider_type="remote::vllm",
-            pip_packages=[],
+            pip_packages=["typesafe-sdk>=0.7.2"],
             module="ogx.providers.remote.inference.vllm",
             config_class="ogx.providers.remote.inference.vllm.VLLMInferenceAdapterConfig",
             provider_data_validator="ogx.providers.remote.inference.vllm.VLLMProviderDataValidator",
@@ -113,7 +113,7 @@ def available_providers() -> list[ProviderSpec]:
             adapter_type="together",
             provider_type="remote::together",
             pip_packages=[
-                "together>=2.34.0",
+                "together>=2.36.0",
             ],
             module="ogx.providers.remote.inference.together",
             config_class="ogx.providers.remote.inference.together.TogetherImplConfig",

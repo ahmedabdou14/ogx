@@ -13,7 +13,7 @@ from ogx_api import (
 )
 
 # Common dependencies for all vector IO providers that support document processing
-DEFAULT_VECTOR_IO_DEPS = ["chardet", "pypdf>=6.16.2"]
+DEFAULT_VECTOR_IO_DEPS = ["chardet", "pypdf>=6.20.1"]
 
 
 def available_providers() -> list[ProviderSpec]:
@@ -113,7 +113,7 @@ Datasets that can fit in memory, frequent reads | Faiss | Optimized for speed, i
 #### Empirical Example
 
 Consider the histogram below in which 10,000 randomly generated strings were inserted
-in batches of 100 into both Faiss and sqlite-vec using `client.tool_runtime.rag_tool.insert()`.
+in batches of 100 into both Faiss and sqlite-vec using `client.vector_stores.files.create()`.
 
 ```{image} ../../../../_static/providers/vector_io/write_time_comparison_sqlite-vec-faiss.png
 :alt: Comparison of SQLite-Vec and Faiss write times
